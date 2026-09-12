@@ -10,6 +10,10 @@ namespace Bai_3_Chu_de_2.Model
     public class DSGiangVien
     {
         private List<GiangVien> _giangVienList;
+        public List<GiangVien> GiangVienList
+        {
+            get { return _giangVienList; }
+        }
 
         public DSGiangVien()
         {
@@ -30,6 +34,7 @@ namespace Bai_3_Chu_de_2.Model
         {
             _giangVienList.Sort(comparison);
         }
+
 
         public GiangVien this[int index]
         {

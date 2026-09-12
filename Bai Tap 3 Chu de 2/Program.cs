@@ -1,11 +1,7 @@
-using Bai_3_Chu_de_2.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Bai_3_Chu_de_2
+namespace Lab02_QuanLySinhVienKhoaCNTT
 {
     static class Program
     {
@@ -17,7 +13,7 @@ namespace Bai_3_Chu_de_2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGiangVien());
+            Application.Run(new frmSinhVienKhoaCNTT());
         }
     }
 }

@@ -56,6 +56,7 @@ namespace Bai_3_Chu_de_2
             this.linklbLienHe = new System.Windows.Forms.LinkLabel();
             this.btn_ThemGV = new System.Windows.Forms.Button();
             this.cboMaSo = new System.Windows.Forms.ComboBox();
+            this.timGVBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTieuDe
@@ -293,7 +294,7 @@ namespace Bai_3_Chu_de_2
             // 
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(265, 436);
+            this.btnCancel.Location = new System.Drawing.Point(395, 436);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 32);
             this.btnCancel.TabIndex = 23;
@@ -305,7 +306,7 @@ namespace Bai_3_Chu_de_2
             // 
             this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Blue;
-            this.btnExit.Location = new System.Drawing.Point(380, 436);
+            this.btnExit.Location = new System.Drawing.Point(510, 436);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(70, 32);
             this.btnExit.TabIndex = 24;
@@ -317,7 +318,7 @@ namespace Bai_3_Chu_de_2
             // 
             this.lblWebsite.AutoSize = true;
             this.lblWebsite.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWebsite.Location = new System.Drawing.Point(463, 445);
+            this.lblWebsite.Location = new System.Drawing.Point(650, 446);
             this.lblWebsite.Name = "lblWebsite";
             this.lblWebsite.Size = new System.Drawing.Size(51, 15);
             this.lblWebsite.TabIndex = 25;
@@ -327,7 +328,7 @@ namespace Bai_3_Chu_de_2
             // 
             this.linklbLienHe.AutoSize = true;
             this.linklbLienHe.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linklbLienHe.Location = new System.Drawing.Point(520, 445);
+            this.linklbLienHe.Location = new System.Drawing.Point(707, 446);
             this.linklbLienHe.Name = "linklbLienHe";
             this.linklbLienHe.Size = new System.Drawing.Size(46, 15);
             this.linklbLienHe.TabIndex = 26;
@@ -356,11 +357,24 @@ namespace Bai_3_Chu_de_2
             this.cboMaSo.Size = new System.Drawing.Size(120, 21);
             this.cboMaSo.TabIndex = 2;
             // 
+            // timGVBtn
+            // 
+            this.timGVBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timGVBtn.ForeColor = System.Drawing.Color.Blue;
+            this.timGVBtn.Location = new System.Drawing.Point(263, 436);
+            this.timGVBtn.Name = "timGVBtn";
+            this.timGVBtn.Size = new System.Drawing.Size(100, 32);
+            this.timGVBtn.TabIndex = 28;
+            this.timGVBtn.Text = "Tìm GV";
+            this.timGVBtn.UseVisualStyleBackColor = true;
+            this.timGVBtn.Click += new System.EventHandler(this.timGVBtn_Click);
+            // 
             // frmGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 490);
+            this.ClientSize = new System.Drawing.Size(764, 477);
+            this.Controls.Add(this.timGVBtn);
             this.Controls.Add(this.btn_ThemGV);
             this.Controls.Add(this.linklbLienHe);
             this.Controls.Add(this.lblWebsite);
@@ -430,6 +444,7 @@ namespace Bai_3_Chu_de_2
         private System.Windows.Forms.LinkLabel linklbLienHe;
         private System.Windows.Forms.Button btn_ThemGV;
         private System.Windows.Forms.ComboBox cboMaSo;
+        private System.Windows.Forms.Button timGVBtn;
     }
 }
 

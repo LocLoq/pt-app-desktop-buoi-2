@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bai_3_Chu_de_2.Model;
-
+using Bai_3_Chu_de_2.Singleton;
 namespace Bai_3_Chu_de_2
 {
     public partial class frmGiangVien : Form
@@ -32,12 +32,9 @@ namespace Bai_3_Chu_de_2
             DanhMucHocPhan dm2 = new DanhMucHocPhan();
             dm2.Them(new HocPhan("Tiếng Anh B1"));
             dm2.Them(new HocPhan("Mạng Máy Tính"));
-
-
-
-            Program.dSGiangVien.ThemGiangVien(new GiangVien("001", "0123456789", "nguyenvana@gmail.com", "Nguyễn Văn A", new DateTime(1990, 1, 1), dm1, "Nam", new string[] { "Tiếng Anh", "Tiếng Pháp" }));
+            DSGiangVienSingleton.Instance.ThemGiangVien(new GiangVien("001", "0123456789", "nguyenvana@gmail.com", "Nguyễn Văn A", new DateTime(1990, 1, 1), dm1, "Nam", new string[] { "Tiếng Anh", "Tiếng Pháp" }));
             cboMaSo.Items.Add("001");
-            Program.dSGiangVien.ThemGiangVien(new GiangVien("002", "0123456788", "tranthib@gmail.com", "Trần Thị B", new DateTime(1992, 5, 15), new DanhMucHocPhan(), "Nữ", new string[] { "Tiếng Anh", "Tiếng Nhật" }));
+            DSGiangVienSingleton.Instance.ThemGiangVien(new GiangVien("002", "0123456788", "tranthib@gmail.com", "Trần Thị B", new DateTime(1992, 5, 15), new DanhMucHocPhan(), "Nữ", new string[] { "Tiếng Anh", "Tiếng Nhật" }));
             cboMaSo.Items.Add("002");
 
         }
@@ -135,19 +132,25 @@ namespace Bai_3_Chu_de_2
         private void btnThemGV_Click(object sender, EventArgs e)
         {
             // check if maso exist
-            for (int i = 0; i < Program.dSGiangVien.Count; i++)
+            for (int i = 0; i < DSGiangVienSingleton.Instance.Count; i++)
             {
-                GiangVien gv = Program.dSGiangVien[i];
+                GiangVien gv = DSGiangVienSingleton.Instance[i];
                 if (gv.MaSo == this.cboMaSo.Text)
                 {
                     MessageBox.Show("Mã số giảng viên đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
-            Program.dSGiangVien.ThemGiangVien(GetGiangVien());
+            DSGiangVienSingleton.Instance.ThemGiangVien(GetGiangVien());
             // add to combo box
             this.cboMaSo.Items.Add(this.cboMaSo.Text);
             MessageBox.Show("Thêm giảng viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void timGVBtn_Click(object sender, EventArgs e)
+        {
+            var frmSearchGV = new FrmSearchGV();
+            frmSearchGV.ShowDialog();
         }
     }
 }
